@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentList.add(pageFragment1);
         fragmentList.add(pageFragment2);
         fragmentList.add(pageFragment3);
+
         fragmentList.add(pageFragment4);
         ViewPagerAdapter vpAdapter = new ViewPagerAdapter(getSupportFragmentManager(),fragmentList, this);
 

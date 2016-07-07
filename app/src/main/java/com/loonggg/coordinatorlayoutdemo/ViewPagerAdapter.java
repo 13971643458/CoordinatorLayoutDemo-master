@@ -19,6 +19,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     final int PAGE_COUNT = 5;
     private String tabTitles[] = new String[]{"", "分享", "收藏", "关注", "关注者"};
     private Context context;
+
     private List<Fragment>fragmentList;
 
     public ViewPagerAdapter(FragmentManager fm,List<Fragment>fList, Context context) {

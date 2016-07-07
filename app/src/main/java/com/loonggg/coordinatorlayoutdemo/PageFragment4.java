@@ -40,6 +40,7 @@ public class PageFragment4 extends Fragment {
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity());
 
+
         // 设置布局管理器
 
         lv.setLayoutManager(layoutManager);
