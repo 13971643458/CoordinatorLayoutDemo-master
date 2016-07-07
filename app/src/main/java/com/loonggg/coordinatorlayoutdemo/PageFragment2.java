@@ -1,7 +1,5 @@
 package com.loonggg.coordinatorlayoutdemo;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,24 +7,20 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class PageFragment extends Fragment {
+public class PageFragment2 extends Fragment {
     public static final String ARG_PAGE = "ARG_PAGE";
     private int mPage;
     private RecyclerView lv;
 
-    public static PageFragment newInstance(int page) {
+    public static PageFragment2 newInstance(int page) {
         Bundle args = new Bundle();
         args.putInt(ARG_PAGE, page);
-        PageFragment pageFragment = new PageFragment();
+        PageFragment2 pageFragment = new PageFragment2();
         pageFragment.setArguments(args);
         return pageFragment;
     }
@@ -52,7 +46,7 @@ public class PageFragment extends Fragment {
 
         List<String> list = new ArrayList<String>();
         for (int i = 0; i < 100; i++) {
-            list.add(i + "PageFragment");
+            list.add(i + "PageFragment2");
         }
         lv.setAdapter(new MyAdapter(list));
         return view;

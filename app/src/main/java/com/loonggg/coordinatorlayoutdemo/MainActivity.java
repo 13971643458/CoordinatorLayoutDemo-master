@@ -6,6 +6,7 @@ import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -23,6 +24,9 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.jaeger.library.StatusBarUtil;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
@@ -32,6 +36,14 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager main_vp_container;
     private CollapsingToolbarLayout mCollapsingToolbarLayout;
     private CoordinatorLayout root_layout;
+
+    private List<Fragment>fragmentList=new ArrayList<>();
+    private PageFragment pageFragment;
+    private PageFragment1 pageFragment1;
+    private PageFragment2 pageFragment2;
+    private PageFragment3 pageFragment3;
+    private PageFragment4 pageFragment4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +77,22 @@ public class MainActivity extends AppCompatActivity {
         toolbar_tab = (TabLayout) findViewById(R.id.toolbar_tab);
         main_vp_container = (ViewPager) findViewById(R.id.main_vp_container);
 
-        ViewPagerAdapter vpAdapter = new ViewPagerAdapter(getSupportFragmentManager(), this);
+        pageFragment=new PageFragment();
+
+        pageFragment1=new PageFragment1();
+        pageFragment2=new PageFragment2();
+        pageFragment3=new PageFragment3();
+        pageFragment4=new PageFragment4();
+
+        fragmentList.add(pageFragment);
+        fragmentList.add(pageFragment1);
+        fragmentList.add(pageFragment2);
+        fragmentList.add(pageFragment3);
+        fragmentList.add(pageFragment4);
+        ViewPagerAdapter vpAdapter = new ViewPagerAdapter(getSupportFragmentManager(),fragmentList, this);
+
+//        ViewPagerAdapter vpAdapter = new ViewPagerAdapter(fragmentList, this);
+
         main_vp_container.setAdapter(vpAdapter);
         main_vp_container.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener
                 (toolbar_tab));
